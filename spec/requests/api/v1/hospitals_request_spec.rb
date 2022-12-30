@@ -30,4 +30,19 @@ describe "Hospitals API" do
     end
 
   end
+
+  describe 'api/v1/hospitals/hospital_id' do 
+    it 'can return one hospitals data by id' do 
+      hospital = create(:hospital, hospital_id: 40)
+      other_hospital = create(:hospital, hospital_id: 30)
+
+      get "/api/v1/hospitals/#{hospital.hospital_id}"
+
+      one_hospital = JSON.parse(response.body, symbolize_names: true)[:data]
+
+      expect(one_hospital[:attributes][:hospital_id]).to eq(hospital.hospital_id)
+      expect(one_hospital[:attributes][:name]).to eq(hospital.name)
+      expect(one_hospital[:attributes][:name]).to_not eq(other_hospital.name)
+    end
+  end
 end
