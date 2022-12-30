@@ -5,8 +5,8 @@ class CreateHospitals < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :city
       t.string :state
-      t.integer :zip
-      t.integer :beds
+      t.string :zip
+      t.string :beds
       t.string :trauma
 
       t.timestamps
