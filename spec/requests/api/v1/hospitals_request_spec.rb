@@ -52,7 +52,8 @@ describe "Hospitals API" do
 
       error = JSON.parse(response.body, symbolize_names: true)
       expect(error[:error]).to eq("invalid hospital ID")
-
     end
   end
+
+
 end
