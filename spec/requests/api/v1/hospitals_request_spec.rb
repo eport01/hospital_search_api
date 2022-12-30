@@ -55,5 +55,27 @@ describe "Hospitals API" do
     end
   end
 
+  describe 'api/v1/hospitals/search?' do 
+    it 'returns all hospitals by city and state' do 
+      hospital = create(:hospital, city: "Denver", state: "CO")
+      hospital2 = create(:hospital, city: "Denver", state: "CO")
+      hospital3 = create(:hospital, city: "Los Angelos", state: "LA", zip: "90210")
+
+
+      get "/api/v1/hospitals/search?city=Denver&state=CO"
+
+      results = JSON.parse(response.body, symbolize_names: true)[:data]
+      expect(response).to be_successful
+
+      expect(results.count).to eq(2)
+
+      expect(results[0][:attributes][:name]).to eq(hospital.name)
+      expect(results[1][:attributes][:name]).to eq(hospital2.name)
+
+      expect(results[0][:attributes][:city]).to eq(hospital.city)
+      expect(results[1][:attributes][:city]).to eq(hospital2.city)
+    end
+  end
+
 
 end

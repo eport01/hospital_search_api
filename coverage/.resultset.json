@@ -60,6 +60,29 @@
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -270,14 +293,14 @@
         "lines": [
           1,
           1,
-          4,
+          7,
+          9,
+          9,
           6,
           6,
-          6,
-          6,
-          6,
-          6,
-          6,
+          8,
+          9,
+          9,
           null,
           null
         ]
@@ -291,6 +314,8 @@
           1,
           1,
           1,
+          1,
+          1,
           null,
           null,
           null,
@@ -301,6 +326,8 @@
       },
       "/Users/emilyport/Desktop/Turing/mod_3/practice/hospital_search_api/app/models/hospital.rb": {
         "lines": [
+          1,
+          1,
           1,
           null,
           null
@@ -329,6 +356,15 @@
           1,
           null,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
           null
         ]
       },
@@ -347,6 +383,6 @@
         ]
       }
     },
-    "timestamp": 1672438423
+    "timestamp": 1672441582
   }
 }
