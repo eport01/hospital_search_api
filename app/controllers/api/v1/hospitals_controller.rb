@@ -14,8 +14,8 @@ class Api::V1::HospitalsController < ApplicationController
   end
 
   def search 
-    if params[:state] || params[:zip]
-      hospitals = Hospital.search(params[:state], params[:zip])
+    if params[:city] && params[:state] || params[:zip]
+      hospitals = Hospital.search(params[:city], params[:state], params[:zip])
       render json: HospitalSerializer.new(hospitals)
     else 
       render json: {error: "you must supply at least one search parameter"}, status: 404
