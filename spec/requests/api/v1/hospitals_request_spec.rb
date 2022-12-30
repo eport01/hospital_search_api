@@ -44,5 +44,15 @@ describe "Hospitals API" do
       expect(one_hospital[:attributes][:name]).to eq(hospital.name)
       expect(one_hospital[:attributes][:name]).to_not eq(other_hospital.name)
     end
+
+    it 'returns an error and status 404 if hospital id is invalid' do 
+      get "/api/v1/hospitals/25"
+
+      expect(response).to have_http_status 404
+
+      error = JSON.parse(response.body, symbolize_names: true)
+      expect(error[:error]).to eq("invalid hospital ID")
+
+    end
   end
 end
