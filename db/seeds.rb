@@ -15,7 +15,7 @@ CSV.foreach('./db/data/hospitals.csv') do |row|
     i+=1
     next if i ==1
     data = {
-      id: row[3], 
+      hospital_id: row[3], 
       name: row[4], 
       address: row[5], 
       city: row[6], 
